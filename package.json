@@ -14,8 +14,10 @@
     "stylelint:fix": "stylelint './src/**/*.{css,scss}' --fix"
   },
   "dependencies": {
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
+    "@mui/material": "^6.1.6",
     "fabric": "^6.4.3",
-    "konva": "^9.3.16",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-konva": "^18.2.10",

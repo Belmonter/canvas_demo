@@ -1,6 +1,6 @@
-import { createRoot } from 'react-dom/client'
-import App from './App/App'
+import { createRoot } from 'react-dom/client';
+import './index.css';
 
-createRoot(document.getElementById('root')!).render(
-    <App />,
-)
+import CanvasApp from './App/CanvasApp';
+
+createRoot(document.getElementById('root')!).render(<CanvasApp />);
