@@ -14,12 +14,12 @@ const CanvasApp: React.FC = () => {
   // Эффект инициализации канваса
   useEffect(() => {
     if (canvasRef.current) {
-      const fabricJs = new Canvas(canvasRef.current, {
+      const canvas = new Canvas(canvasRef.current, {
         width: 1180,
         height: 520,
       });
 
-      fabricJs.backgroundColor = '#fff';
+      canvas.backgroundColor = '#fff';
 
       loadSVGFromURL(plusIcon)
         .then((result) => {
@@ -29,15 +29,15 @@ const CanvasApp: React.FC = () => {
 
           const svgObject = new Group(objects);
 
-          fabricJs.add(svgObject);
-          fabricJs.renderAll();
+          canvas.add(svgObject);
+          canvas.renderAll();
         })
         .catch((error) => console.error('Ошибка загрузки SVG:', error));
 
-      setCanvas(fabricJs.getContext());
+      setCanvas(canvas.getContext());
 
       return () => {
-        fabricJs.dispose();
+        canvas.dispose();
       };
     }
   }, []);

@@ -1,0 +1,26 @@
+.PanelButtonsGroup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 4px;
+}
+
+.separateRightLine {
+  border-right: 1px solid #d1d5db;
+}
+
+.separateLeftLine {
+  border-left: 1px solid #d1d5db;
+}
+
+.paddingRight {
+  padding-right: 6px;
+}
+
+.paddingLeft {
+  padding-left: 6px;
+}
+
+.padding {
+  padding: 0 6px;
+}
