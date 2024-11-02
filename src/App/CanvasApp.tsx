@@ -5,7 +5,8 @@ import { Canvas, loadSVGFromURL, Group } from 'fabric';
 
 import plusIcon from '../assets/plus.svg';
 import styles from './App.module.scss';
-import { CanvasPanel } from '../components/CanvasPanel/CanvasPanel';
+import { CanvasUpperPanel } from '../components/CanvasPanel/CanvasUpperPanel';
+import EquipmentPanel from '../components/EquipmentPanel/EquipmentPanel';
 
 const CanvasApp: React.FC = () => {
   // Реф ссылка на элемент канваса
@@ -18,10 +19,9 @@ const CanvasApp: React.FC = () => {
     if (canvasRef.current) {
       const canvas = new Canvas(canvasRef.current, {
         width: 1180,
-        height: 520,
+        height: 476,
+        backgroundColor: '#fff',
       });
-
-      canvas.backgroundColor = '#fff';
 
       loadSVGFromURL(plusIcon)
         .then((result) => {
@@ -47,9 +47,10 @@ const CanvasApp: React.FC = () => {
   return (
     <div className={styles.CanvasApp}>
       <div className={styles.canvas}>
-        <CanvasPanel />
+        <CanvasUpperPanel />
         <canvas id={'canvas'} ref={canvasRef} />
       </div>
+      <EquipmentPanel />
     </div>
   );
 };

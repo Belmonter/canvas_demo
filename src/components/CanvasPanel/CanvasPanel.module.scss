@@ -1,11 +1,23 @@
 .CanvasPanel {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  box-sizing: border-box;
   width: 100%;
   height: 40px;
   padding: 0 4px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
   background-color: #e5e7eb;
+
+  &_leftSide {
+    display: flex;
+    align-items: center;
+  }
+
+  &_rightSide {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .backgroundBlue {

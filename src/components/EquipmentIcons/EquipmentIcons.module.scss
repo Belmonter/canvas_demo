@@ -1,0 +1,17 @@
+.EquipmentIcons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+
+  &_iconWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 54px;
+    height: 55px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    background-color: #f9fafb;
+  }
+}

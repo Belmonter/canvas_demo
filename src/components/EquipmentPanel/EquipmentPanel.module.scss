@@ -1,0 +1,35 @@
+.EquipmentPanel {
+  width: 100%;
+  max-width: 260px;
+  height: 516px;
+  box-shadow:
+    0 1px 3px 0 rgb(0 0 0 / 10%),
+    0 1px 2px 0 rgb(0 0 0 / 6%);
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: #fff;
+
+  &_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 33px;
+    padding: 8px 12px 8px 16px;
+    background-color: #e5e7eb;
+
+    svg {
+      cursor: pointer;
+    }
+  }
+
+  &_content {
+    padding: 0 12px;
+  }
+
+  &_steams {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

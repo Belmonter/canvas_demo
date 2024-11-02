@@ -6,7 +6,7 @@
     "prettier/prettier": true,
     "at-rule-no-unknown": [true, { "ignoreAtRules": ["tailwind", "apply", "variants", "responsive", "screen"] }],
     "block-no-empty": null,
-    "unit-allowed-list": ["em", "rem", "%", "s", "px", "deg", "ms"],
+    "unit-allowed-list": ["em", "rem", "%", "s", "px", "deg", "ms", "vh"],
     "order/order": [
       "custom-properties",
       "dollar-variables",

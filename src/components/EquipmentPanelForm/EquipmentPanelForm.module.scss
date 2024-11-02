@@ -1,0 +1,27 @@
+.EquipmentPanelForm {
+  max-width: 100%;
+
+  &_selectWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    margin-top: 6px;
+  }
+
+  &_select {
+    width: 189px;
+    height: 32px;
+  }
+
+  &_listIconWrapper {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 32px;
+    cursor: pointer;
+    border-radius: 6px;
+    background-color: #e5e7eb;
+  }
+}
