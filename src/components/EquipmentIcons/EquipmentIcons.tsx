@@ -14,39 +14,52 @@ import EquipmentIcon10 from '../../icons/EquipmentIcon10';
 import EquipmentIcon11 from '../../icons/EquipmentIcon11';
 
 const EquipmentIcons = () => {
+  const onDragStart = (event, nodeType) => {
+    event.dataTransfer.setData('application/reactflow', nodeType);
+    event.dataTransfer.effectAllowed = 'move';
+  };
+
   return (
     <div className={styles.EquipmentIcons}>
-      <div className={styles.EquipmentIcons_iconWrapper} draggable={true}>
+      <div
+        className={styles.EquipmentIcons_iconWrapper}
+        draggable
+        onDragStart={(e) => onDragStart(e, 'custom')}
+      >
         <EquipmentIcon1 />
       </div>
-      <div className={styles.EquipmentIcons_iconWrapper} draggable={true}>
+      <div
+        className={styles.EquipmentIcons_iconWrapper}
+        draggable
+        onDragStart={(e) => onDragStart(e, 'custom')}
+      >
         <EquipmentIcon2 />
       </div>
-      <div className={styles.EquipmentIcons_iconWrapper} draggable={true}>
+      <div className={styles.EquipmentIcons_iconWrapper} draggable>
         <EquipmentIcon3 />
       </div>
-      <div className={styles.EquipmentIcons_iconWrapper} draggable={true}>
+      <div className={styles.EquipmentIcons_iconWrapper} draggable>
         <EquipmentIcon4 />
       </div>
-      <div className={styles.EquipmentIcons_iconWrapper} draggable={true}>
+      <div className={styles.EquipmentIcons_iconWrapper} draggable>
         <EquipmentIcon5 />
       </div>
-      <div className={styles.EquipmentIcons_iconWrapper} draggable={true}>
+      <div className={styles.EquipmentIcons_iconWrapper} draggable>
         <EquipmentIcon6 />
       </div>
-      <div className={styles.EquipmentIcons_iconWrapper} draggable={true}>
+      <div className={styles.EquipmentIcons_iconWrapper} draggable>
         <EquipmentIcon7 />
       </div>
-      <div className={styles.EquipmentIcons_iconWrapper} draggable={true}>
+      <div className={styles.EquipmentIcons_iconWrapper} draggable>
         <EquipmentIcon8 />
       </div>
-      <div className={styles.EquipmentIcons_iconWrapper} draggable={true}>
+      <div className={styles.EquipmentIcons_iconWrapper} draggable>
         <EquipmentIcon9 />
       </div>
-      <div className={styles.EquipmentIcons_iconWrapper} draggable={true}>
+      <div className={styles.EquipmentIcons_iconWrapper} draggable>
         <EquipmentIcon10 />
       </div>
-      <div className={styles.EquipmentIcons_iconWrapper} draggable={true}>
+      <div className={styles.EquipmentIcons_iconWrapper} draggable>
         <EquipmentIcon11 />
       </div>
     </div>

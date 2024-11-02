@@ -7,6 +7,10 @@ body {
   box-sizing: border-box;
 }
 
+.react-flow__attribution {
+  display: none;
+}
+
 #canvas {
   z-index: 2;
 }

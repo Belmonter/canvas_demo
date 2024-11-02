@@ -9,12 +9,10 @@ const IconWrapper: React.FC<IconWrapperProps> = ({
   name,
   className,
   innerClassName,
-  ...props
 }) => {
   return (
     <span aria-label={name} className={cn(styles.IconWrapper, className)}>
       {React.cloneElement(children, {
-        ...props,
         className: innerClassName,
       })}
     </span>
