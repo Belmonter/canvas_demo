@@ -1,3 +1,5 @@
+/// <reference types="vite-plugin-svgr/client" />
+
 import React, { useEffect, useRef, useState } from 'react';
 import { Canvas, loadSVGFromURL, Group } from 'fabric';
 

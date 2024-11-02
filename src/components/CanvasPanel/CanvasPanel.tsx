@@ -1,35 +1,37 @@
 import React from 'react';
 import { Switch } from '@mui/material';
 
-import plusIcon from '../../assets/plus.svg';
-import scissors from '../../assets/scissors.svg';
-import copy from '../../assets/copy.svg';
 import styles from './CanvasPanel.module.scss';
 import PanelButton from '../PanelButton/PanelButton';
 import PanelButtonsGroup from '../PanelButtonsGroup/PanelButtonsGroup';
-import layoutList from '../../assets/layout_list.svg';
+import CopyIcon from '../../icons/CopyIcon';
+import PlusIcon from '../../icons/PlusIcon';
+import ScissorsIcon from '../../icons/ScissorsIcon';
+import LayoutListIcon from '../../icons/LayoutListIcon';
+import StreamSignatureIcon from '../../icons/StreamSignatureIcon';
+import ConnectIcon from '../../icons/ConnectIcon';
 
 export const CanvasPanel = () => {
   return (
     <div className={styles.CanvasPanel}>
       <PanelButtonsGroup addPadding={'right'} separateLine={'right'}>
-        <PanelButton icon={plusIcon} typeOfView={'icon'} />
-        <PanelButton icon={scissors} typeOfView={'icon'} />
-        <PanelButton icon={copy} typeOfView={'icon'} />
+        <PanelButton element={<PlusIcon />} />
+        <PanelButton element={<ScissorsIcon />} />
+        <PanelButton element={<CopyIcon />} />
       </PanelButtonsGroup>
       <PanelButtonsGroup addPadding={'all'} separateLine={'right'}>
+        <PanelButton element={<Switch size="small" />} text={'Активный'} />
         <PanelButton
-          element={<Switch size="small" />}
-          text={'Активный'}
-          typeOfView={'elementText'}
+          element={<LayoutListIcon />}
+          text={'Панель оборудования'}
         />
         <PanelButton
-          icon={layoutList}
-          imgClassName={styles.backgroundBlue}
-          text={'панель оборудования'}
-          typeOfView={'iconText'}
+          element={<StreamSignatureIcon />}
+          text={'Подпись потока'}
         />
-        <PanelButton icon={copy} typeOfView={'icon'} />
+      </PanelButtonsGroup>
+      <PanelButtonsGroup addPadding={'left'}>
+        <PanelButton element={<ConnectIcon />} text={'Соединить'} />
       </PanelButtonsGroup>
     </div>
   );

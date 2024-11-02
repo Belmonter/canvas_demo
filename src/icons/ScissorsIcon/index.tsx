@@ -2,14 +2,14 @@ import React from 'react';
 
 import { IconProps } from '../IconWrapper/IconWrapper.types';
 import IconWrapper from '../IconWrapper/IconWrapper';
-import Icon from '../../assets/copy.svg?react';
+import Icon from '../../assets/scissors.svg?react';
 
-const CopyIcon = (props: IconProps) => {
+const ScissorsIcon = (props: IconProps) => {
   return (
-    <IconWrapper {...props} name={'CopyIcon'}>
+    <IconWrapper {...props} name={'ScissorsIcon'}>
       <Icon />
     </IconWrapper>
   );
 };
 
-export default CopyIcon;
+export default ScissorsIcon;
