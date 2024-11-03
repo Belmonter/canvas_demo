@@ -15,7 +15,7 @@ import EquipmentIcon11 from '../../icons/EquipmentIcon11';
 
 const EquipmentIcons = () => {
   const onDragStart = (event, nodeType) => {
-    event.dataTransfer.setData('application/reactflow', nodeType);
+    event.dataTransfer.setData('Text', nodeType);
     event.dataTransfer.effectAllowed = 'move';
   };
 
@@ -24,18 +24,22 @@ const EquipmentIcons = () => {
       <div
         className={styles.EquipmentIcons_iconWrapper}
         draggable
-        onDragStart={(e) => onDragStart(e, 'custom')}
+        onDragStart={(e) => onDragStart(e, 'custom1')}
       >
         <EquipmentIcon1 />
       </div>
       <div
         className={styles.EquipmentIcons_iconWrapper}
         draggable
-        onDragStart={(e) => onDragStart(e, 'custom')}
+        onDragStart={(e) => onDragStart(e, 'custom2')}
       >
         <EquipmentIcon2 />
       </div>
-      <div className={styles.EquipmentIcons_iconWrapper} draggable>
+      <div
+        className={styles.EquipmentIcons_iconWrapper}
+        draggable
+        onDragStart={(e) => onDragStart(e, 'custom3')}
+      >
         <EquipmentIcon3 />
       </div>
       <div className={styles.EquipmentIcons_iconWrapper} draggable>

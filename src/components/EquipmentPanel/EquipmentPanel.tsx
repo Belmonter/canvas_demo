@@ -10,11 +10,7 @@ import EquipmentIcons from '../EquipmentIcons/EquipmentIcons';
 
 const EquipmentPanel = () => {
   return (
-    <div
-      className={styles.EquipmentPanel}
-      draggable={true}
-      onDragStart={(e) => console.log(e)}
-    >
+    <div className={styles.EquipmentPanel} draggable={true}>
       <div className={styles.EquipmentPanel_header}>
         <span>Панель оборудования</span>
         <CloseIcon />
