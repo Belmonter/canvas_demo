@@ -14,7 +14,10 @@ import EquipmentIcon10 from '../../icons/EquipmentIcon10';
 import EquipmentIcon11 from '../../icons/EquipmentIcon11';
 
 const EquipmentIcons = () => {
-  const onDragStart = (event, nodeType) => {
+  const onDragStart = (
+    event: React.DragEvent<HTMLDivElement>,
+    nodeType: string
+  ) => {
     event.dataTransfer.setData('Text', nodeType);
     event.dataTransfer.effectAllowed = 'move';
   };
