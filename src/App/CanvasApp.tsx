@@ -8,6 +8,9 @@ import {
   useNodesState,
   OnConnect,
   NodeTypes,
+  useReactFlow,
+  Connection,
+  Edge,
 } from '@xyflow/react';
 
 import '@xyflow/react/dist/style.css';
@@ -18,6 +21,7 @@ import EquipmentPanel from '../components/EquipmentPanel/EquipmentPanel';
 import Eq4 from '../icons/Eq4';
 import Eq1Node from '../components/Eq1Node/Eq1Node';
 import Eq3Node from '../components/Eq2Node/Eq2Node';
+import CustomEdge from '../components/CustomEdge/RightAngleEdge';
 
 interface Node {
   id: string;
@@ -33,7 +37,8 @@ interface Node {
 
 const CanvasApp: React.FC = () => {
   const [nodes, setNodes, onNodesChange] = useNodesState<Node>([]);
-  const [edges, setEdges, onEdgesChange] = useEdgesState([]);
+  const [edges, setEdges, onEdgesChange] = useEdgesState<Edge>([]);
+  const { screenToFlowPosition } = useReactFlow();
 
   const nodeTypes: NodeTypes = useMemo(
     () => ({
@@ -44,8 +49,15 @@ const CanvasApp: React.FC = () => {
     []
   );
 
-  const onConnect: OnConnect = useCallback(
-    (params) => setEdges((eds) => addEdge(params, eds)),
+  const edgeTypes = {
+    'custom-edge': CustomEdge,
+  };
+
+  const onConnect = useCallback(
+    (connection: Connection) => {
+      const edge = { ...connection, type: 'custom-edge' };
+      setEdges((eds) => addEdge(edge, eds));
+    },
     [setEdges]
   );
 
@@ -55,13 +67,13 @@ const CanvasApp: React.FC = () => {
 
       const nodeType = event.dataTransfer.getData('Text');
       // Получение границ контейнера React Flow
-      const reactFlowBounds = event.currentTarget.getBoundingClientRect();
+      // const reactFlowBounds = event.currentTarget.getBoundingClientRect();
 
       // Учитываем прокрутку страницы
-      const position = {
-        x: event.clientX - reactFlowBounds.left,
-        y: event.clientY - reactFlowBounds.top,
-      };
+      const position = screenToFlowPosition({
+        x: event.clientX,
+        y: event.clientY,
+      });
 
       const newNode = {
         id: `custom-${Date.now()}`,
@@ -88,6 +100,7 @@ const CanvasApp: React.FC = () => {
           <ReactFlow
             nodes={nodes}
             edges={edges}
+            edgeTypes={edgeTypes}
             onConnect={onConnect}
             onNodesChange={onNodesChange}
             onEdgesChange={onEdgesChange}

@@ -60,7 +60,7 @@ const Eq3Node = () => {
 
       <Handle
         type="target"
-        position={Position.Top}
+        position={Position.Right}
         id={'Eq3Node3-target'}
         style={{
           top: 41,
@@ -71,7 +71,7 @@ const Eq3Node = () => {
       />
       <Handle
         type="source"
-        position={Position.Top}
+        position={Position.Right}
         id={'Eq3Node3-source'}
         style={{
           top: 41,

@@ -10,7 +10,7 @@ const Eq1Node = () => {
 
       <Handle
         type="target"
-        position={Position.Top}
+        position={Position.Left}
         id={'Eq1Node1-target'}
         onConnect={(e) => console.log(e)}
         style={{
@@ -22,7 +22,7 @@ const Eq1Node = () => {
       />
       <Handle
         type="source"
-        position={Position.Top}
+        position={Position.Left}
         id={'Eq1Node1-source'}
         style={{
           top: 41,
