@@ -6,7 +6,6 @@ import {
   ReactFlow,
   useEdgesState,
   useNodesState,
-  OnConnect,
   NodeTypes,
   useReactFlow,
   Connection,
@@ -21,7 +20,7 @@ import EquipmentPanel from '../components/EquipmentPanel/EquipmentPanel';
 import Eq4 from '../icons/Eq4';
 import Eq1Node from '../components/Eq1Node/Eq1Node';
 import Eq3Node from '../components/Eq2Node/Eq2Node';
-import CustomEdge from '../components/CustomEdge/RightAngleEdge';
+import { CustomEdge } from '../components/CustomEdge/CustomEdge';
 
 interface Node {
   id: string;
@@ -66,10 +65,7 @@ const CanvasApp: React.FC = () => {
       event.preventDefault();
 
       const nodeType = event.dataTransfer.getData('Text');
-      // Получение границ контейнера React Flow
-      // const reactFlowBounds = event.currentTarget.getBoundingClientRect();
 
-      // Учитываем прокрутку страницы
       const position = screenToFlowPosition({
         x: event.clientX,
         y: event.clientY,
